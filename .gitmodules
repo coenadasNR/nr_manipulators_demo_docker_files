@@ -1,0 +1,3 @@
+[submodule "demo_pick_and_place/src"]
+	path = demo_pick_and_place/src
+	url = https://github.com/coenadasNR/nr_manipulator_software_files.git
