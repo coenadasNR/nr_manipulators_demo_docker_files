@@ -1,4 +1,0 @@
-[submodule "src"]
-	path = src
-	url = https://github.com/rahul-theroboticist/Demo-2_vision-based-sorting.git
-	branch = small

@@ -1,4 +1,0 @@
-float64 target_position_m
----
-bool success
-string message
