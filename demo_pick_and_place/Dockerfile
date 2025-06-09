@@ -3,7 +3,7 @@ FROM osrf/ros:humble-desktop-full
 
 ENV ROS_DISTRO=humble
 
-COPY /src2 /root/ros2_ws/src/
+COPY /src /root/ros2_ws/src/
 
 # Set the working directory inside the container
 WORKDIR /root/ros2_ws/src/

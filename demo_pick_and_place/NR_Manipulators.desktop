@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=NR Manipulators 
+Comment=Launch the demo ui
+Path= /home/nr-ws-1/Desktop/nr_manipulator_demo_docker_files/demo_pick_and_place/
+Exec= bash -c "source ~/.bashrc && /home/nr-ws-1/Desktop/nr_manipulator_demo_docker_files/demo_pick_and_place/demo_run.sh"
+Icon=utilities-terminal
+Terminal=true
+Type=Application
