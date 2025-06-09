@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Hyperspace by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">About</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html" class="active">About</a></li>
+						<!-- <li><a href="elements.html">Elements</a></li> -->
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Pick and Place Demo</h1>
+							<span class="image fit"><img src="static/assets/images/facility-mob.jpg" alt="" /></span>
+							<p>This project is for the National Robotarium (NR) Manipulator Setup manipulation tasks. The demos showcase the integration of robotic manipulation with digital twin technology, utilizing the following key components:
+								<div class="row">
+									<div class="col-12">
+										<ul>
+											<ul>
+												<li><strong> xArm5 Robotic Arm </strong>- A 5-axis manipulator that performs the physical pick-and-place operations once a cube’s identity has been verified.</li>
+												<li><strong>Realsense RGB-D Camera</strong> - Captures ArUco code printed on every cube, enabling code decoding.</li>
+												<li><strong>OpenCV Vision Pipeline</strong> - Extracts the ArUco marker code of each cube and decodes it, ensuring the payload match before handing the target pose to the planner.</li>
+												<li><strong>MoveIt 2 </strong>- Generates collision-free trajectories for the xArm5 based on the poses produced by the vision pipeline.</li>
+												<li><strong>Isaac Sim</strong> - NVIDIA's physics-based digital-twin environment allows us to model the camera, arm, and conveyor, enabling validation of the vision and manipulation stack under realistic lighting and dynamics.</li>
+												<li><strong>ROS 2</strong> - Provides the middleware that links vision, planning and arm control, allowing the exact same nodes to run in both simulation and on the physical cell.</li>
+											</ul>
+											
+											<!-- <p>
+												<strong>Demo goal:</strong> showcase a closed-loop, vision-guided pick-and-place task in which every coloured cube is authenticated by matching its ArUco code. The pipeline runs in Isaac Sim and on the real hardware Xarm5, illustrating how a digital twin accelerates development, shortens integration time and reduces risk when moving from simulation to the factory floor.
+											</p> -->
+											
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>
