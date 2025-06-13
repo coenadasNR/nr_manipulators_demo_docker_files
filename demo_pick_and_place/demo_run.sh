@@ -1,6 +1,7 @@
 #!/bin/bash
+kill $(lsof -t -i:2003)
 source ~/.bashrc
-python3 ~/Desktop/nr_manipulator_demo_docker_files/demo_pick_and_place/main.py &
+python3 ~/Desktop/test/nr_manipulators_demo_docker_files/demo_pick_and_place/main.py &
 firefox "http://192.168.88.237:2003" &
 source /opt/ros/humble/setup.bash
 # Set ROS 2 bridge environment variables

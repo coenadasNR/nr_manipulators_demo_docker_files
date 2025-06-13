@@ -1,6 +1,5 @@
 #!/bin/bash
 clear &&\
-    source ~/.bashrc
     docker_build.sh &&\
     docker_run.sh \
         "\
