@@ -1,4 +1,4 @@
 [submodule "demo_pick_and_place/src"]
 	path = demo_pick_and_place/src
 	url = https://github.com/rahul-theroboticist/Demo-2_vision-based-sorting.git
-	branch = small
+	branch = demo1
