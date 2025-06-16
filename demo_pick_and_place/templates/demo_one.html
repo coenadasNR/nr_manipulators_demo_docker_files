@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Demo One</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="static/assets/css/main.css" />
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<noscript>
+		<link rel="stylesheet" href="static/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a href="index.html" class="title">NR Manipulators</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="generic.html">About</a></li>
+				<li><a href="https://github.com/coenadasNR/nr_manipulators_demo_docker_files.git"  class="active">GitHub</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<h1 class="major">Demo 1: Vision-based pick and place task</h1>
+
+				<!-- Text -->
+				<section>
+
+					<h3>Watch a smart vision-based pick-and-place system in action.
+						Each cube is identified by a unique ArUco marker, allowing the system to accurately detect
+						and sort them.
+						Cubes are seamlessly moved from their pickup point to the correct destination based on the
+						information encoded in their
+						respective ArUco markers.</h3>
+					<!-- TO DO;IMAGE -->
+					<a href="#" class="image"><img src="static/assets/images/demo1.jpeg" width="1200" height="600"
+							alt="" data-position="top left" /></a>
+					<div class="row">
+						<p></p>
+					</div>
+					<p><strong>Run Simulation:</strong></p>
+					<div class="row">
+
+						<div class="col-6 col-12-medium">
+							<ul class="actions">
+								<li>
+									<form action="start_demo_sim" method="post">
+										<button type="submit">Run Simulation</button>
+									</form>
+								</li>
+								<li>
+									<form action="stop_container" method="post">
+										<button class="button primary" type="submit">Stop Simulation</button>
+									</form>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<p><strong>Run Hardware:</strong></p>
+					<p>Please ensure you verify all instructions before running
+						hardware.</p>
+					<ul class="actions">
+						<li><a href="#demo2" class="button primary scrolly">Instructions</a></li>
+			</div>
+		</section>
+		<section id="demo2" class="wrapper style2 fade-up">
+			<div class="inner">
+				<h2>Simulated + Real Demo</h2>
+				<p>Please verify the below steps to run the demo.</p>
+				<div class="features">
+					<section>
+						<span class="icon solid major fa-link"></span>
+						<h3>Switched on Xarm5</h3>
+						<p>Check the Xarm5 is turned on. This is shown by the green light on the controller
+							box.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-lock"></span>
+						<h3>Emergency Stop Button</h3>
+						<p>Emergency Stop button must be at a close distance to the user so it can be
+							pressed easily
+							during emergency.</p>
+					</section>
+					<section>
+						<span class="icon major fa-gem"></span>
+						<h3>Place cubes in camera view</h3>
+						<p>Ensure the cube are within the camera views on the table.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-cog"></span>
+						<h3>Remove any obtsacles</h3>
+						<p>No obstacles should be near the workspace of the robot.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-code"></span>
+						<h3>Safe Distance</h3>
+						<p>Please maintain a safe distance from the robot while the demo is running.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-desktop"></span>
+						<h3>Digital twin</h3>
+						<p>Click on 'RUN' below and watch the simulation running parallely on Isaac Sim.</p>
+					</section>
+				</div>
+
+				<ul class="actions">
+					<li>
+						<form action="start_demo_real" method="post">
+							<button type="submit">Run Hardware</button>
+						</form>
+					</li>
+					<li>
+						<form action="stop_container" method="post">
+							<button class="button primary" type="submit">Stop Hardware</button>
+						</form>
+					</li>
+				</ul>
+			</div>
+
+
+		</section>
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; Untitled. All rights reserved.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="static/assets/js/jquery.min.js"></script>
+	<script src="static/assets/js/jquery.scrollex.min.js"></script>
+	<script src="static/assets/js/jquery.scrolly.min.js"></script>
+	<script src="static/assets/js/browser.min.js"></script>
+	<script src="static/assets/js/breakpoints.min.js"></script>
+	<script src="static/assets/js/util.js"></script>
+	<script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
