@@ -13,6 +13,7 @@ docker run \
   --runtime=nvidia \
   --gpus all \
   -v $HOME/.config/.FILES:/root/.config/.FILES \
+  -v ${PWD}/local:/root/ros2_ws/src/local \
   -e RUN_MODE=$RUN_MODE \
   --rm \
   --privileged \

@@ -1,5 +1,6 @@
 #!/bin/bash
 clear &&\
+    export RUN_MODE="hardware" &&\
     docker_build.sh &&\
     docker_run.sh \
         "\
@@ -7,6 +8,7 @@ clear &&\
         "\
         "\
             -e RUN_MODE=$RUN_MODE \
+            -v ${PWD}/local:/root/ros2_ws/src/local \
             --rm \
             --privileged \
             --name demo_pick_and_place \
