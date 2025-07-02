@@ -1,6 +1,5 @@
 #!/bin/bash
 clear &&\
-    export RUN_MODE="hardware" &&\
     docker_build.sh &&\
     docker_run.sh \
         "\

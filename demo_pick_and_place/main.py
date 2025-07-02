@@ -7,18 +7,19 @@ import smtplib
 
 cwd = os.getcwd()
 
-# cwd = "/home/nr-ws-1/Desktop/nr_manipulator_demo_docker_files/demo_pick_and_place"
+# cwd = "/home/nr-ws-1/Desktop/test/nr_manipulators_demo_docker_files/demo_pick_and_place"
 
 # Specify the container name or ID
 CONTAINER_NAME = "demo_pick_and_place"
-# CONTAINER_NAME = "demo2"
 
 def pick_place_sim():
     os.environ['RUN_MODE'] = "sim"
+    print("sim")
     print(cwd)
     subprocess.call(f"{cwd}/demo2.sh", shell=True)
 def pick_place_sim_real():
     os.environ['RUN_MODE'] = "hardware"
+    print("hardware")
     subprocess.call(f"{cwd}/demo2.sh", shell=True)
 # def demo2_pick_place_sim_real():
 #     os.environ['RUN_MODE'] = "hardware"

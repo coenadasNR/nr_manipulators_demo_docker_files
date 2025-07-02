@@ -14,7 +14,8 @@ export LD_LIBRARY_PATH=${ISAAC_ROS_LIB_PATH}:${LD_LIBRARY_PATH}
 echo "Using RMW: $RMW_IMPLEMENTATION"
 echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH" 
 #~/isaacsim/isaac-sim.sh --/app/startup/scene="/home/nr-ws-1/isaacsim_assets/models/Assembly_Models/ufrobots_RAS_Scene/ufrobots_RAS_Scene.usd" --/app/startup/autoStart=true
-~/isaacsim/isaac-sim.sh --exec "open_stage.py /home/nr-ws-1/isaacsim_assets/models/Assembly_Models/ufrobots_RAS_Scene/ufrobots_RAS_Scene.usd"
+~/isaacsim/isaac-sim.sh --exec "open_autoplay_stage.py /home/nr-ws-1/isaacsim_assets/models/Assembly_Models/ufrobots_RAS_Scene/ufrobots_RAS_Scene.usd"
 #~/.local/share/ov/pkg/isaac-sim-4.2.0/isaac-sim.sh --load-default-usd=false omniverse://localhost/Projects/NR_RAS/sceneV2.usd
+# ~/isaacsim/isaac-sim.sh --exec /home/nr-ws-1/isaacsim/start_sim.py
 $SHELL
 

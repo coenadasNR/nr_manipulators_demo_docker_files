@@ -24,9 +24,10 @@
 		<a href="index.html" class="title">NR Manipulators</a>
 		<nav>
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="generic.html">About</a></li>
-				<li><a href="https://github.com/coenadasNR/nr_manipulators_demo_docker_files.git"  class="active">GitHub</a></li>
+				<li><a href="index.html" class="active">Home</a></li>
+				<li><a href="generic.html" class="active">About</a></li>
+				<li><a href="https://github.com/coenadasNR/nr_manipulators_demo_docker_files.git"
+						class="active">GitHub</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -55,66 +56,93 @@
 						<p></p>
 					</div>
 					<p><strong>Run Simulation:</strong></p>
+					<p>A simulation-only demo running in an Issac Sim simulated environment along with Rviz with no
+						physical robots involved.</p>
 					<div class="row">
 
 						<div class="col-6 col-12-medium">
 							<ul class="actions">
 								<li>
 									<form action="start_demo_sim" method="post">
-										<button type="submit">Run Simulation</button>
+										<button id="run_simulation" class="button primary"
+											style="background-color: rgb(62, 197, 62); color: white;"
+											onclick="runSimulationButton()" type="submit">Run
+											Simulation</button>
 									</form>
 								</li>
 								<li>
-									<form action="stop_container" method="post">
-										<button class="button primary" type="submit">Stop Simulation</button>
+									<form id="stop_simulation" action="stop_container" method="post">
+										<button class="button primary" onclick="resetSimuationButton()"
+											type="submit">Stop
+											Simulation</button>
 									</form>
 								</li>
 							</ul>
 						</div>
 					</div>
-					<p><strong>Run Hardware:</strong></p>
-					<p>Please ensure you verify all instructions before running
-						hardware.</p>
+					<script>
+						function runSimulationButton() {
+							const btn = document.getElementById("run_simulation");
+							btn.style.backgroundColor = "yellow"; // Change background color
+							//sbtn.style.color = "yellow";          // Change text color
+							btn.innerText = "Loading ...";          // Change button text
+
+							setTimeout(() => {
+								btn.innerText = "Running...";
+							}, 5000);
+						}
+
+						function resetSimuationButton() {
+							const btn = document.getElementById("run_simulation");
+							btn.style.backgroundColor = "rgb(62, 197, 62)"; // Change background color
+							btn.innerText = "Run Simulation";          // Change button text
+						}
+					</script>
+					<p><strong>Run Physical Demo with Simuation:</strong></p>
+					<p>A demo running with both the physical Xarm5 and Issac Sim simulated environment along with Rviz
+						for integrated testing and visualization.</p>
+					<p><strong>⚠️ Please ensure you verify all instructions before running
+							hardware.</strong></p>
 					<ul class="actions">
 						<li><a href="#demo2" class="button primary scrolly">Instructions</a></li>
 			</div>
 		</section>
 		<section id="demo2" class="wrapper style2 fade-up">
 			<div class="inner">
-				<h2>Simulated + Real Demo</h2>
-				<p>Please verify the below steps to run the demo.</p>
+				<h2>Physical Demo with Simuations</h2>
+				<p>Complete the final setup steps below and verify all systems are ready before starting the demo.</p>
 				<div class="features">
 					<section>
 						<span class="icon solid major fa-link"></span>
-						<h3>Switched on Xarm5</h3>
+						<h3>1. Switched on Xarm5</h3>
 						<p>Check the Xarm5 is turned on. This is shown by the green light on the controller
 							box.</p>
 					</section>
 					<section>
 						<span class="icon solid major fa-lock"></span>
-						<h3>Emergency Stop Button</h3>
+						<h3>4. Emergency Stop Button</h3>
 						<p>Emergency Stop button must be at a close distance to the user so it can be
 							pressed easily
 							during emergency.</p>
 					</section>
 					<section>
 						<span class="icon major fa-gem"></span>
-						<h3>Place cubes in camera view</h3>
+						<h3>2. Place cubes in camera view</h3>
 						<p>Ensure the cube are within the camera views on the table.</p>
 					</section>
 					<section>
 						<span class="icon solid major fa-cog"></span>
-						<h3>Remove any obtsacles</h3>
+						<h3>5. Remove any obtsacles</h3>
 						<p>No obstacles should be near the workspace of the robot.</p>
 					</section>
 					<section>
 						<span class="icon solid major fa-code"></span>
-						<h3>Safe Distance</h3>
+						<h3>3. Safe Distance</h3>
 						<p>Please maintain a safe distance from the robot while the demo is running.</p>
 					</section>
 					<section>
 						<span class="icon solid major fa-desktop"></span>
-						<h3>Digital twin</h3>
+						<h3>6. Digital twin</h3>
 						<p>Click on 'RUN' below and watch the simulation running parallely on Isaac Sim.</p>
 					</section>
 				</div>
@@ -122,16 +150,37 @@
 				<ul class="actions">
 					<li>
 						<form action="start_demo_real" method="post">
-							<button type="submit">Run Hardware</button>
+							<button id="run_hardware" class="button primary"
+								style="background-color: rgb(62, 197, 62); color: white;"
+								onclick="runHardwareButton()" type="submit">Run Hardware</button>
 						</form>
 					</li>
 					<li>
 						<form action="stop_container" method="post">
-							<button class="button primary" type="submit">Stop Hardware</button>
+							<button id="stop_hardware" class="button primary" onclick="resetHardwareButton()"
+								type="submit">Stop Hardware</button>
 						</form>
 					</li>
 				</ul>
 			</div>
+			<script>
+				function runHardwareButton() {
+					const btn = document.getElementById("run_hardware");
+					btn.style.backgroundColor = "yellow"; // Change background color
+					//sbtn.style.color = "yellow";          // Change text color
+					btn.innerText = "Loading ...";          // Change button text
+
+					setTimeout(() => {
+						btn.innerText = "Running...";
+					}, 5000);
+				}
+
+				function resetHardwareButton() {
+					const btn = document.getElementById("run_hardware");
+					btn.style.backgroundColor = "rgb(62, 197, 62)"; // Change background color
+					btn.innerText = "Run Hardware";          // Change button text
+				}
+			</script>
 
 
 		</section>

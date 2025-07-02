@@ -1,2 +1,2 @@
 Wait
-We are waiting day 1
+We are waiting day infinity
