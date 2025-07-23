@@ -17,11 +17,11 @@ echo "Allowing Docker containers to access the X server..."
 xhost +local:docker
 
 # Build the Docker image
-echo "Building Docker image: $IMAGE_NAME"
-if ! docker build -t "$IMAGE_NAME" "$DOCKERFILE_DIR"; then
-  echo "Docker build failed!"
-  exit 1
-fi
+# echo "Building Docker image: $IMAGE_NAME"
+# if ! docker build -t "$IMAGE_NAME" "$DOCKERFILE_DIR"; then
+#   echo "Docker build failed!"
+#   exit 1
+# fi
 
 # Run the Docker container
 echo "Running Docker container: $CONTAINER_NAME"
