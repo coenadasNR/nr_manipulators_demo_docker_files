@@ -14,17 +14,15 @@ RUN apt-get update && apt-get install -y \
     ros-humble-librealsense2* \
     ros-humble-realsense2-* \
     python3-rosdep \
-    python3-pip 
-
-
-# Install opencv-contrib-python using pip3
-RUN pip3 install opencv-contrib-python
-
-RUN apt-get update && \
-    apt install apparmor -y && \
-    apt-get install -y \
+    python3-pip \
     git \
+    apparmor \
     && rm -rf /etc/ros/rosdep/sources.list.d/20-default.list
+
+# Clean up system-installed numpy/scipy if present, then install compatible versions
+RUN pip3 install --upgrade pip && \
+    pip3 uninstall -y numpy scipy || true && \
+    pip3 install numpy==1.24.3 scipy==1.10.1 opencv-contrib-python
 
 # RUN git submodule update --init --recursive
 # Initialize rosdep and update it
@@ -37,3 +35,6 @@ RUN cd /root/ros2_ws \
     && colcon build
 
 ENTRYPOINT [ "/root/ros2_ws/src/entrypoint.sh"]
+
+
+
