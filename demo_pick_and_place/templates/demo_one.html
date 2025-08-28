@@ -151,8 +151,8 @@
 					<li>
 						<form action="start_demo_real" method="post">
 							<button id="run_hardware" class="button primary"
-								style="background-color: rgb(62, 197, 62); color: white;"
-								onclick="runHardwareButton()" type="submit">Run Hardware</button>
+								style="background-color: rgb(62, 197, 62); color: white;" onclick="runHardwareButton()"
+								type="submit">Run Hardware</button>
 						</form>
 					</li>
 					<li>
@@ -182,6 +182,40 @@
 				}
 			</script>
 
+
+
+		</section>
+		<section id="demo" class="wrapper">
+			<div class="inner">
+				<h2>Demo Video</h2>
+				<p>This is a pre-recorded demo video. Please click the button below to open the video.</p>
+				<button id="show-video-btn" class="button primary">Show Video </button>
+
+				<div id="video-container">
+					<video controls>
+						<source src="{{ url_for('static', filename='manipulators_demo_one.webm') }}" type="video/webm">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+
+				<script>
+					const button = document.getElementById("show-video-btn");
+					const container = document.getElementById("video-container");
+
+					button.addEventListener("click", () => {
+						if (container.style.display === "none") {
+							container.style.display = "block";
+							button.textContent = "Hide Video";
+						} else {
+							container.style.display = "none";
+							button.textContent = "Show Video";
+						}
+					});
+				</script>
+
+
+
+			</div>
 
 		</section>
 
